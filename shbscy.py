@@ -28,6 +28,7 @@ def limbhit(self):
         rleg = rleg - damage
     return
 
+wound = 0
 tea = 100
 clothing = 100
 fatigue = 0
@@ -40,24 +41,37 @@ rleg = 100
 monster = 500
 
 print("""
-you hear slithering in the distance
-you quickly change into a maid costume
-you draw your water gun
-you are ready to face the lurking cephalopod
+neko-chan hears slithering in the distance
+neko-chan quickly changes into a maid costume
+neko-chan draws her water gun
+neko-chan is ready to face the lurking cephalopod
 """)
 
 input("press enter to load your weapon with hot tea")
 
 while monster > 0:
-    dodge = randint(0,5)
+
     limb = randint(0,5)
 
     print("-----------------------------")
     input("press enter to use moe powers")
     print("-----------------------------")
 
-    damage = randint(0,29)
+    dialogue = randint(0,3)
+    damage = randint(0,39)
 
+    if head <= 0:
+        damage -= 3
+    if torso <= 0:
+        damage -= 1
+    if larm <= 0:
+        damage -= 2
+    if rarm <= 0:
+        damage -= 2
+    if lleg <= 0:
+        damage -= 1
+    if rleg <= 0:
+        damage -= 1
     if fatigue >= 100:
         print("damage reduced by 5 due to fatigue")
         damage -= 5
@@ -65,11 +79,23 @@ while monster > 0:
         print("damage reduced by 5 due to lack of tea")
         damage -= 5
 
+    if dialogue == 0:
+        print("the tentacle monster screeches in agony")
+
+    if dialogue == 1:
+        print("neko-chan sticks her tongue out slightly, mocking the tentacle monster")
+
+    if dialogue == 2:
+        print("neko-chan teases the tentacle monster a bit"
+
+    if dialogue == 3:
+        print("neko-chan says 'nyaa~'")
+
     monster -= damage
 
-    print("you spray hot tea on the tentacle monster for " + str(damage) + " damage")
+    print("neko-chan sprays hot tea on the tentacle monster for " + str(damage) + " damage")
 
-    damage = randint(0,29)
+    damage = randint(0,39)
 
     if clothing <= 0:
         print("10 damage added for nudity")
@@ -90,13 +116,18 @@ while monster > 0:
 
     print("the monster strikes back for " + str(damage) + " damage")
 
-    reducestat = randint(0,9)
+    reducestat = randint(0,3)
     fatigue += reducestat
 
-    reducestat = randint(0,9)
+    reducestat = randint(0,3)
     tea -= reducestat
 
-    reducestat = randint(0,9)
+    reducestat = randint(0,3)
     clothing = clothing - reducestat
 
     statprint(0)
+
+print("it is not known whether or not the schoolgirl that ventured into that cave won her fight")
+print("all we know is that japanese schoolgirls must never set foot there")
+print("or much tentacle rape will occur")
+print("a kawaiidesuka game")
