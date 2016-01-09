@@ -143,5 +143,5 @@ while monster > 0:
 
 print("it is not known whether or not the schoolgirl that ventured into that cave won her fight")
 print("all we know is that japanese schoolgirls must never set foot there")
-print("or much tentacle rape will occur")
+print("or much tentacling will occur")
 print("a kawaiidesuka game")
