@@ -61,17 +61,23 @@ while monster > 0:
     damage = randint(0,39)
 
     if head <= 0:
-        damage -= 3
+        damage -= 4
+        print("damage reduced by 4 due head damage")
     if torso <= 0:
-        damage -= 1
+        damage -= 3
+        print("damage reduced by 3 due to torso damage")
     if larm <= 0:
         damage -= 2
+        print("damage reduced by 2 due to arm damage")
     if rarm <= 0:
         damage -= 2
+        print("damage reduced by 2 due to arm damage")
     if lleg <= 0:
         damage -= 1
+        print("damage reduced by 1 due to leg damage")
     if rleg <= 0:
         damage -= 1
+        print("damage reduced by 1 due to leg damage")
     if fatigue >= 100:
         print("damage reduced by 5 due to fatigue")
         damage -= 5
@@ -86,7 +92,7 @@ while monster > 0:
         print("neko-chan sticks her tongue out slightly, mocking the tentacle monster")
 
     if dialogue == 2:
-        print("neko-chan teases the tentacle monster a bit"
+        print("neko-chan teases the tentacle monster a bit")
 
     if dialogue == 3:
         print("neko-chan says 'nyaa~'")
@@ -125,6 +131,14 @@ while monster > 0:
     reducestat = randint(0,3)
     clothing = clothing - reducestat
 
+    if tea < 20:
+        print("your maneki-neko necklace senses your struggles and heals you")
+        head = head + 20
+        torso = torso + 20
+        larm = larm + 20
+        rarm = rarm + 20
+        lleg = lleg + 20
+        rleg = rleg + 20
     statprint(0)
 
 print("it is not known whether or not the schoolgirl that ventured into that cave won her fight")
