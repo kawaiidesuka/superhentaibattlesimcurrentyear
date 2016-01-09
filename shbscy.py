@@ -58,11 +58,22 @@ while monster > 0:
 
     damage = randint(0,29)
 
-    monster = monster - damage
+    if fatigue >= 100:
+        print("damage reduced by 5 due to fatigue")
+        damage -= 5
+    if tea <= 100:
+        print("damage reduced by 5 due to lack of tea")
+        damage -= 5
+
+    monster -= damage
 
     print("you spray hot tea on the tentacle monster for " + str(damage) + " damage")
 
     damage = randint(0,29)
+
+    if clothing <= 0:
+        print("10 damage added for nudity")
+        damage += 10
 
     if limb == 0:
         head = head - damage
@@ -76,13 +87,14 @@ while monster > 0:
         lleg = lleg - damage
     elif limb == 5:
         rleg = rleg - damage
+
     print("the monster strikes back for " + str(damage) + " damage")
 
     reducestat = randint(0,9)
-    fatigue = fatigue + reducestat
+    fatigue += reducestat
 
     reducestat = randint(0,9)
-    tea = tea - reducestat
+    tea -= reducestat
 
     reducestat = randint(0,9)
     clothing = clothing - reducestat
